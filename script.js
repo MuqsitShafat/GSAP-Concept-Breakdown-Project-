@@ -80,7 +80,50 @@ navTl.from("h4",{
     stagger : 0.3   
 })  
 navTl.from("#name",{
-    scale: 0.5,
+    // scale: 0.5,
     duration: 1,
-    opacity: 0,
+    opacity: 0.4,
+    color: "red",
+    repeat   : -1
+})
+
+
+// gsap for scrollTriggers
+
+// gsap.from(".page1 #boxi1",{
+//     duration: 2,
+//     rotate: 360,
+//     backgroundColor: "yellow",
+//     scale : 2,
+// })
+// gsap.from(".page2 #boxi2",{
+//     duration: 2,
+//     rotate: 360,
+//     backgroundColor: "yellow",
+//     // scale : 0,
+//     // scrollTrigger: '.page2 #boxi2',
+//     scrollTrigger : {
+//         trigger : ".page2 #boxi2",
+//         scroller : "body",
+//         markers : true,
+//         start : "top 60%",
+//         end : "top 30%",
+//         scrub : 2, //true or false or num between 1-5 
+//         pin: true
+//     },
+    
+// })
+
+// gsap scrolltrigger animation for text 
+gsap.to(".section2 h1",{
+    transform : "translateX(-150%)",
+    scrollTrigger : {
+        trigger : ".section2",
+        scroller : "body",
+        // markers : true,
+        start : "top 0%",
+        end : "top -150%",
+        scrub : 2,
+        pin: true
+    },
 })
