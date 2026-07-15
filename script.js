@@ -137,20 +137,55 @@ var path = `M 10 100 Q 250 100 490 100`
 var initialPath = `M 10 100 Q 250 100 490 100`
 
 let svg  = document.querySelector(".svg");
-svg.addEventListener( "mousemove", function(e){
-    path = `M 10 100 Q ${e.x} ${e.y} 490 100`
-    console.log(`moved`)
-    gsap.to(`svg path`,{
-        attr : {d:path },
+// svg.addEventListener( "mousemove", function(e){
+//     path = `M 10 100 Q ${e.x} ${e.y} 490 100`
+//     console.log(`moved`)
+//     gsap.to(`svg path`,{
+//         attr : {d:path },
+//         ease: "power4.out",
+//         duration : 0.2
+//     })
+// })
+// svg.addEventListener( "mouseleave", function(e){
+//     path = initialPath
+//     gsap.to(`svg path`,{
+//         duration : 1,
+//         ease: "elastic.out(1,0.1)",
+//         attr : {d:path }
+//     })
+// })
+
+// moveable cursor animation
+var main = document.querySelector("#main");
+var cursor = document.querySelector("#cursor");
+main.addEventListener("mousemove", function(e){
+    gsap.to(cursor, {
+        x: e.x,
+        y: e.y,
         ease: "power4.out",
-        duration : 0.2
+        duration: .5
     })
 })
-svg.addEventListener( "mouseleave", function(e){
-    path = initialPath
-    gsap.to(`svg path`,{
-        duration : 1.5,
-        ease: "elastic.out(1,0.1)",
-        attr : {d:path }
+
+let text = document.querySelector(".text");
+text.addEventListener("mouseenter", function(e){
+    // gsap.to(".text p", {
+    //     scale: 1.2,
+    //   color: "#cdaaaa",
+    // })
+       gsap.to("#cursor", {
+        scale: 1.2,
+         backgroundColor: "rgb(228, 214, 214)" 
+    })
+})
+
+text.addEventListener("mouseleave", function(e){
+    gsap.to(".text p", {
+        scale: 1,
+         color: "#000000",
+    })
+       gsap.to("#cursor", {
+        scale: 1.2,
+         backgroundColor: "rgb(25, 8, 8)" 
     })
 })

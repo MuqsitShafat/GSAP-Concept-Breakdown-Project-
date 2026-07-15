@@ -140,3 +140,26 @@ body {
     background: rgb(71,107,107);
  
 }
+
+/* moveable cursor */
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cursor{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(25, 8, 8);
+    position: fixed; /* so it can move in every page */
+    opacity: .7;
+}
+.text{
+  max-width: 500px;
+  max-height: 500px;
+  color: black
+}
