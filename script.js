@@ -28,7 +28,7 @@
 //     // if u give stagger : -1 then it makes element to animate in reverse order
 
 // })
-// This below tells u how timelines works synchronously where we adjust delays manually
+//! This below tells u how timelines works synchronously where we adjust delays manually
 // gsap.to("#box2",{
 //     x: 1000,
 //     duration: 2,
@@ -49,7 +49,8 @@
 //     duration: 2,
 //      delay: 5,
 // })
-//  Now we will see how timelines works synchronously where we don't have to adjust delays manually
+
+//!  Now we will see how timelines works synchronously where we don't have to adjust delays manually
 // const tl = gsap.timeline({defaults:{duration: 2}}); // we can set default values for all the animations in timeline
 // tl.to("#box2",{
 //     x: 1000,
@@ -65,7 +66,7 @@
 //     backgroundColor: "red",
 // })
 
-// // Timeline animation for the navbar created
+//! Timeline animation for the navbar created
 // const navTl = gsap.timeline();
 // navTl.from("#logo",{
 //     y:-30,
@@ -113,7 +114,7 @@
 
 // })
 
-// gsap scrolltrigger animation for text
+//! gsap scrolltrigger animation for text
 // gsap.registerPlugin(ScrollTrigger);
 
 // gsap.to("#section2 h1", {

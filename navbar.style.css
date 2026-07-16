@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* background-color: #333; */
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  overflow-x: hidden;
+}
+/* navbar.html css */
+.main {
+  height: 100%;
+  width: 100%;
+  background-color: #c0e3ed;
+  background-image: url(https://images.pexels.com/photos/8726326/pexels-photo-8726326.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.navbar {
+  height: 100px;
+  width: 100%;
+  color: wheat;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar i{ 
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 600;
+}
+.full {
+  height: 100%;
+  width: 40%;
+  position: absolute;
+  background-color: rgba(0, 255, 255, 0.205);
+  top: 0;
+  right: -40%;
+  backdrop-filter: blur(
+    10px
+  ); /* works when the bgcolor given opacity is reduced below 50% */
+  padding: 150px 50px;
+}
+.nav-content h4 {
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 50px;
+  font-weight: 500;
+}
+.nav-content i {
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: rgba(0, 255, 255, 0.205);
+  border-radius: 50%;
+  padding:7px
+}
