@@ -130,14 +130,13 @@
 //   }
 // });
 
-
 //! SVGS - Mode svg and draw svgs are paid (scalable vector graphics)
 //? bezier curves has four points and quadratic curves has 3 points
 
-var path = `M 10 100 Q 250 100 490 100`
-var initialPath = `M 10 100 Q 250 100 490 100`
+var path = `M 10 100 Q 250 100 490 100`;
+var initialPath = `M 10 100 Q 250 100 490 100`;
 
-let svg  = document.querySelector(".svg");
+let svg = document.querySelector(".svg");
 // svg.addEventListener( "mousemove", function(e){
 //     path = `M 10 100 Q ${e.x} ${e.y} 490 100`
 //     console.log(`moved`)
@@ -159,34 +158,67 @@ let svg  = document.querySelector(".svg");
 // moveable cursor animation
 var main = document.querySelector("#main");
 var cursor = document.querySelector("#cursor");
-main.addEventListener("mousemove", function(e){
-    gsap.to(cursor, {
-        x: e.x,
-        y: e.y,
-        ease: "power4.out",
-        duration: .5
-    })
-})
+// main.addEventListener("mousemove", function(e){
+//     gsap.to(cursor, {
+//         x: e.x,
+//         y: e.y,
+//         ease: "power4.out",
+//         duration: .5
+//     })
+// })
 
-let text = document.querySelector(".text");
-text.addEventListener("mouseenter", function(e){
-    // gsap.to(".text p", {
-    //     scale: 1.2,
-    //   color: "#cdaaaa",
-    // })
-       gsap.to("#cursor", {
-        scale: 1.2,
-         backgroundColor: "rgb(228, 214, 214)" 
-    })
-})
+// let text = document.querySelector(".text");
+// text.addEventListener("mouseenter", function(e){
+//     // gsap.to(".text p", {
+//     //     scale: 1.2,
+//     //   color: "#cdaaaa",
+//     // })
+//        gsap.to("#cursor", {
+//         scale: 1.2,
+//          backgroundColor: "rgb(228, 214, 214)"
+//     })
+// })
 
-text.addEventListener("mouseleave", function(e){
-    gsap.to(".text p", {
-        scale: 1,
-         color: "#000000",
-    })
-       gsap.to("#cursor", {
-        scale: 1.2,
-         backgroundColor: "rgb(25, 8, 8)" 
-    })
-})
+// text.addEventListener("mouseleave", function(e){
+//     gsap.to(".text p", {
+//         scale: 1,
+//          color: "#000000",
+//     })
+//        gsap.to("#cursor", {
+//         scale: 1.2,
+//          backgroundColor: "rgb(25, 8, 8)"
+//     })
+// })
+
+//! text animations
+// ? first we are going to break the text
+function breakText() {
+  var h1 = document.querySelector("h1");
+  var h1text = h1.textContent;
+  var splitText = h1text.split("");
+  let letters = ``;
+  splitText.forEach(function (e, idx) {
+    if (idx < splitText.length / 2) letters += `<span class="a">${e}</span>`;
+    else {
+      letters += `<span class="b">${e}</span>`;
+      console.log(letters);
+    }
+  });
+  h1.innerHTML = letters;
+}
+breakText();
+gsap.from(".a", {
+  y: 100,
+  duration: 0.6,
+  delay: 0.2,
+  stagger: 0.15,
+  opacity: 0,
+});
+
+gsap.from(".b", {
+  y: 100,
+  duration: 0.6,
+  delay: 0.2,
+  stagger: -0.15,
+  opacity: 0,
+});
