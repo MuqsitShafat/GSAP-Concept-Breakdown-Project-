@@ -35,3 +35,57 @@ tl.from(".sectionbottom img",{
     stagger: 0.14
 })
 }
+function page2Animation(){
+    
+gsap.from(".services h3", {
+    x:-100,
+    opacity:0,
+    duration: 0.5,
+    scrollTrigger : {
+        trigger: ".services h3",
+        start: "top 70%",
+        scroller: "body",
+        markers: true
+    }
+})
+// timeline for scrollTrigger
+const tl2 = gsap.timeline(
+    {
+        scrollTrigger : {
+            trigger: ".section2",
+            start: "top 50%",
+            end: "top 0%",
+            scrub: 3,
+            markers: true
+        }
+    }
+);
+tl2.from(".services ",{
+    y:30,
+    opacity: 0,  
+    duration:0.5,  
+})
+tl2.from(".elem.line1.left",{
+    x:-300,
+    duration:1,
+    opacity:0
+},"start1")
+tl2.from(".elem.line1.right",{
+    x:300,
+    duration:1,
+    opacity:0
+},"start1")
+tl2.from(".elem.line2.left",{
+    x:-300,
+    duration:1,
+    opacity:0
+},"start2")
+tl2.from(".elem.line2.right",{
+    x:300,
+    duration:1,
+    opacity:0
+},"start2")
+}
+
+page1Animation();
+page2Animation();
